@@ -63,6 +63,34 @@ body {
     padding: 0 1em;
 }
 
+a {
+    text-decoration: none;
+    color: #349ba8;
+    outline:none;
+    visibility: visible !important;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.read-more {
+    color: #999;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px #000;
+    -webkit-box-shadow: 0 1px 3px #000;
+    text-shadow: 0 -1px 1px #000;
+    background-color: #0d0d0d;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    float: right;
+    margin-top: 15px;
+    margin-left: 15px;
+}
 
 /*----------------------
  * Logo
@@ -177,12 +205,12 @@ body {
 
     .slides a:link,
     .slides a:visited {
-      color: #333
+      /*color: #333*/
     }
 
     .slides a:hover,
     .slides a:active {
-      color: #9e2020
+      /*color: #9e2020*/
     }
 
 
@@ -318,7 +346,8 @@ footer#footer {
     padding-left: 0px;
 }
 
-    #footer * {
+    #footer p,
+    #footer span {
         color: #999;
     }
 
@@ -362,6 +391,22 @@ a.twitter-follow {
     margin-left: 0px;
     float: right;
 }
+
+
+/*----------------------------------
+ * Feeds
+ *---------------------------------*/
+.feed-list .feed-item .feed-title {
+    display:block;
+    margin-bottom:10px;
+}
+
+.feed-list .feed-item .feed-tstamp {
+    display:block;
+    font-size:0.9em;
+    color: #AAAAAA;
+}
+
 
 /*---------------------------------
  * Responsive queries
