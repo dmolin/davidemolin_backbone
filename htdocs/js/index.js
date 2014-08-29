@@ -19,7 +19,8 @@ window.addEventListener("load", function() {
     function activateSlides(selector, options) {
       $(selector).slidesjs(_.extend({
           width: 960,
-          height: 305
+          height: 305,
+          navigation: false
       }, options));
     }
 

@@ -130,20 +130,22 @@ body {
 
     .slides .slidesjs-navigation {
       margin-top:3px;
+      text-decoration: none;
+      font-size: 2em;
     }
 
     .slides .slidesjs-previous {
-      margin-right: 5px;
+      margin-right: 10px;
       float: left;
     }
 
     .slides .slidesjs-next {
-      margin-right: 5px;
+      margin-right: 10px;
       float: left;
     }
 
     .slidesjs-pagination {
-      margin: 6px 0 0;
+      margin: 0.8em 0 0;
       float: right;
       list-style: none;
     }
@@ -325,7 +327,7 @@ footer#footer {
  *-------------------------------*/
 .testimonials {
 }
-    .testimonials ul {
+    .testimonials .slides {
         list-style:none;
         padding:0;
         margin:0;
