@@ -1,13 +1,11 @@
 window.addEventListener("load", function() {
 
     //activate slides
-    $("#slides").slidesjs({
-        width: 960,
-        height: 305
-    });
+    activateSlides(".slideshow .slides", {width: 960, height: 305});
+    activateSlides(".testimonials .slides", {width: 310, height: 305});
 
     //handle click on slides
-    $('#slides img').click( function() {
+    $('.slides .slide').click( function() {
         var url =$(this).data('href');
         if(url) {
             window.open(url, "_blank");
@@ -18,8 +16,15 @@ window.addEventListener("load", function() {
     setupCollapsibles();
 
 
+    function activateSlides(selector, options) {
+      $(selector).slidesjs(_.extend({
+          width: 960,
+          height: 305
+      }, options));
+    }
+
     function setupCollapsibles() {
-        $(".desc").hide();
+        //$(".desc").hide();
         $(".open-close").click(function(){
           if ($(this).is(".current"))
           {
@@ -35,7 +40,6 @@ window.addEventListener("load", function() {
            $(this).next(".desc").slideDown(400);
           }
          });
-
     }
 });
 

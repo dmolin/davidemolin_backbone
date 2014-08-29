@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
 
     <script src="http://code.jquery.com/jquery-latest.min.js" ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <!-- Cufon JavaScript Files -->
     <script src="js/cufon.js" ></script>
     <script>
@@ -25,7 +26,7 @@
 
 <body class="">
 
-<div id='wrapper' class="l-content">
+<div id='wrapper' class="wrapper">
     <header class='intro pure-g'>
         <!-- logo and other things -->
         <div id="logo" class="pure-u-1 pure-u-sm-2-3">
@@ -39,29 +40,36 @@
         </div>
     </header>
 
-    <section class="pure-u-1">
-        <div id="slides">
-            <img src="images/slideshow_ea.jpg">
-            <img src="images/slideshow_flightsimpanels.jpg" data-href="http://github.com/dmolin/flightSimPanels">
-            <img src="images/slideshow_mindcandy.jpg" data-href="http://www.mindcandy.com">
-            <img src="images/slideshow_moshlings.jpg" data-href="http://www.moshlings.com">
-            <img src="images/slideshow_moshlings2.jpg" data-href="http://www.moshlings.com">
-            <img src="images/slideshow_sportsbook.jpg" data-href="https://sports.bovada.lv/mobile/#home">
+    <!-- slideshow -->
+    <section class="slideshow pure-u-1">
+        <div class="slides">
+                <img class="slide" src="images/slideshow_flightsimpanels.jpg" data-href="http://github.com/dmolin/flightSimPanels">
+                <img class="slide" src="images/slideshow_ea.jpg">
+                <img class="slide" src="images/slideshow_moshlings.jpg" data-href="http://www.moshlings.com">
+                <img class="slide" src="images/slideshow_moshlings2.jpg" data-href="http://www.moshlings.com">
+                <img class="slide" src="images/slideshow_mindcandy.jpg" data-href="http://www.mindcandy.com">
+                <img class="slide" src="images/slideshow_sportsbook.jpg" data-href="https://sports.bovada.lv/mobile/#home">
+                <img class="slide" src="images/slideshow_slotscom.jpg">
+                <img class="slide" src="images/slideshow_slots2.png">
+                <img class="slide" src="images/slideshow_internal.jpg">
+                <img class="slide" src="images/slideshow_usatoday.jpg">
+                <img class="slide" src="images/slideshow_fulham.jpg">
         </div>
     </section>
 
     <!-- content area -->
     <section class="articles">
+        <!-- About me -->
         <article>
             <header class="open-close">
                 <a href="javascript:void(0)"><h2>About me</h2></a>
             </header>
             <div class="pure-g desc">
-                <div class="about-me pure-u-1 pure-u-sm-1-6">
+                <div class="about-me pure-u-1 pure-u-sm-1-3 pure-u-lg-1-6">
                     <img class="cameo pure-img" title="dmolin-quarter" src="/images/me.jpg" alt="Picture of myself" />
                 </div>
 
-                <div class="about-content pure-u-1 pure-u-sm-5-6">
+                <div class="about-content pure-u-1 pure-u-sm-2-3 pure-u-lg-5-6">
                     <p>
                         I&#8217;m a Front End Developer, with a passion for Web Standards, Javascript programming, Front End Development in general and the World Wide Web.
                     </p>
@@ -76,6 +84,7 @@
             </div>
         </article>
 
+        <!-- Yes & No -->
         <article>
             <header class="open-close">
                 <a href="javascript:void(0)"><h2>My Yes &amp; No</h2></a>
@@ -118,11 +127,22 @@
             </div>
         </article>
 
+        <!-- Projects -->
         <article>
             <header class="open-close">
                 <a href="javascript:void(0)"><h2>Projects I've been working on</h2></a>
             </header>
+            <div class="projects desc pure-g">
+                <ul>
+                    <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4"><div class="box"><img class="pure-img" src="http://placehold.it/310x310"></div></li>
+                    <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4"><div class="box"><img class="pure-img" src="http://placehold.it/310x310"></div></li>
+                    <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4"><div class="box"><img class="pure-img" src="http://placehold.it/310x310"></div></li>
+                    <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4"><div class="box"><img class="pure-img" src="http://placehold.it/310x310"></div></li>
+                </ul>
+            </div>
         </article>
+
+        <!-- Contact me -->
         <article>
             <header class="open-close">
                 <a href="javascript:void(0)"><h2>Contact me</h2></a>
@@ -132,28 +152,181 @@
 
 </div>
 
-<footer>
-    <section>
-        <article>
+<footer id="footer" class="">
+    <section class="wrapper pure-g pad-context">
+        <article class="testimonials pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
             <header>
-            <h3>Testimonials</h3>
+            <h2>Testimonials</h2>
+            </header>
+
+            <ul class="slides">
+                <li>
+                    <p><time datetime="2013-08">December 08, 2013</time></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            Davide is a highly experienced and exceptional contract UI developer who worked on our ambitious project to launch car insurance within a few months. He was a perfect fit for our small agile team, picked everything up very quickly and was excellent at not just building what we asked for but through discussion helping us realise how to do it better. Very sad to see him go once his contract was up but hopefully we'll be able to get him back soon! I'd recommend him without hesitation.
+                        </p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Rick Wilton Profile" href="http://www.linkedin.com/profile/view?id=5767752&authToken=5Wyh">Rick Wilton</a>,
+                        <em>Product Owner / Project Manager at QMetric</em>
+                        <br /><i>Rick managed Davide at QMetric Group Limited</i>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-stamp'>July 15, 2013</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            Davide is very capable JavaScript developer. He works quickly, with a high standard, and without fuss.
+                        </p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Glen Peterson Profile" href="http://www.linkedin.com/profile/view?id=51607344&authToken=BT0y">Glen Peterson</a>,
+                        <em>CTO at Chattoo</em>
+                        <br /><i>Glen managed Davide at Zeebox</i>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-stamp'>July 15, 2013</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            Davide is an exceptional software engineer with a friendly and collaborative attitude. His strength are his focus on TDD, his readiness to adopt local processes, and his natural inclination to iterate; all of which made it very quick to integrate him into the team, and a pleasure to work with. I would jump at the chance to work with Davide again, either as a front-end or web-services developer
+                        </p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Mike Hutchinson Profile" href="http://www.linkedin.com/profile/view?id=10290797&authToken=HLy0">Mike Hutchinson</a>,
+                        <em>Product Manager at Zeebox</em>
+                        <br /><i>Mike worked directly with Davide at zeebox</i>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-stamp'>January 21, 2013</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            Davide is a highly skilled JavaScript engineer with a commendable work ethic. He is laid-back, modest and thoughtful in his interactions with the team. I have heard nothing but praise for Davide's work; he sets a great example.
+                        </p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Tom Pearson Profile" href="http://www.linkedin.com/profile/view?id=117429282&authToken=pc3V">Tom Pearson</a>,
+                        <em>Forward Deployed Engineer, Palantir Technologies</em>
+                        <br /><i>Managed Davide at Electronic Arts</i>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-stamp'>August 14, 2012</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            Davide is one of those rare breed of web developers who keep strong engineering principles at the centre of everything they do. Always up for interesting technical challenges and looking at what's possible rather than what's "normal", Davide is a great technical expert. Working with Davide was always a pleasure. Even when the work the team had wasn't particularly challenging, he always kept a pragmatic attitude and looked to the future. I wouldn't hesitate to take the opportunity to work with him again
+                        </p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Kevin LLoyd Profile" href="http://uk.linkedin.com/in/lloydie">Kevin Lloyd</a>, <em>Development Manager at Amazon</em>
+                        <br /><i>Managed Davide as Director of Software Development at MindCandy</i>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-tstamp'>March 22, 2011</span></p>
+                    <blockquote>
+                        <p class='endorsement'>Davide is a great souce of knowledge and experience. We worked together in multiple projects and I became to admire his versatility and broad understanding. Davide is depsite all that a modest and supportive person. He takes pride in mentoring and sharing his knowledge and always makes you feel welcome when asking for help.</p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Juergen Biermann Profile" href="http://es.linkedin.com/pub/juergen-biermann/0/aa0/148">Juergen Biermann</a>,
+                        <em>Senior Product Manager Casino</em>
+                        <br /><i>worked with Davide at Riplife Gaming Technologies / Bodog Europe</i>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-tstamp'>March 20, 2011</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            <span class='title'>Riplife 2011 Annual Assessment</span>
+                            To have Davide coming into the team during the summer has showed to be an enormous asset to the whole UX-team. He is, as said before &#8220;the right person at the right place&#8221;. And not just for the UX-team but also for the casino team working with the Slots.com project he has been an asset and someone that have meant a great deal of added value.
+                        </p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Zac Fors Profile" href="http://es.linkedin.com/in/zacfors">Zach Fors</a>,
+                        <em>Creative Director at Riplife.</em>
+                        <br /><i>hired Davide as a Front End Developer in 2010</i>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-tstamp'>November 21, 2010</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            Davide was part of our in-house development team before deciding to move  to Spain. Davide was a real team player and helped maintain a very good  atmosphere in the development team. His positive attitude and  optimistic approach were much appreciated by his colleagues and by  management. Professionally, Davide masters the technologies very well  and thinks creatively in order to achieve the most efficient result in  the shortest time.
+                        </p>
+                        <p><em>Top qualities:</em> Personable, Expert, Creative</p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Gabriella D. Modiano's Profile" href="www.linkedin.com/pub/gabriella-d-modiano/0/8b5/616">Gabriella D. Modiano</a>,
+                        <em>Managing Partner at Modiano &amp; Partners</em>
+                        <br /><i>hired Davide as a IT Consultant in 2009</i></p>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class='feed-tstamp'>March 20, 2009</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            David is a professional high-level, one of the best with whom I had the  good fortune to work in the last years.Hard geared to achieving the  objectives by maintaining a high standard of quality.<br />
+                            His ability, experience and his personality have put me in terms to  being able to delegate tasks among the most&#8217; complex to have developed.
+                        </p>
+                        <p><em>Key feature:</em> for him solution's design and programming, before being a job, are a great passion.</p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Marco's Profile" href="http://it.linkedin.com/pub/marco-appetito/1/403/52a">Marco Appetito</a>,
+                        <em> Principal Consultant, Aubay</em>
+                        <br /><i>managed Davide  at Aubay</i></p>
+                    </cite>
+                </li>
+
+                <li>
+                    <p><span class="feed-tstamp">November 28, 2007</span></p>
+                    <blockquote>
+                        <p class='endorsement'>
+                            Davide is one of the best professionals I ever known. He is competent, proactive, with both technical, graphical ad human skills. I’ve worked with him for a long period (and hope to work with him in future), with great human and professional satisfaction, still now, in our periodic meetings, he is full of new great ideas and technical innovations.
+                        </p>
+                    </blockquote>
+                    <cite>
+                        <a title="View Marco Oreste's Profile" href="http://it.linkedin.com/pub/marco-oreste-pogliaghi/1/679/24">Marco Oreste Pogliaghi</a>,
+                        <em>team leader, aubay</em>
+                        <br /><i>managed Davide at Aubay</i>
+                    </cite>
+                </li>
+            </ul><!--END ul-->
+
+        </article>
+        <article class="pad pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
+            <header>
+            <h2>My blog</h2>
             </header>
         </article>
-        <article>
+        <article class="pad pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
             <header>
-            <h3>My blog</h3>
+                <a href="http://twitter.com/davidemolin" title="Follow me on Twitter"><h2>Latest tweets</h2></a>
             </header>
-        </article>
-        <article>
-            <header>
-            <h3>Contact me</h3>
-            </header>
+            <div id="twitter-holder">
+                <a class="twitter-timeline" href="https://twitter.com/davidemolin" data-widget-id="412908681601093634" height="300" width="100%">Tweets by @davidemolin</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                <!--END tweet-->
+                <a href="http://twitter.com/davidemolin" class="twitter-follow" title="Follow me on Twitter!">My Tweets</a>
+            </div><!--END twitter holder-->
+
         </article>
     </section>
     <!-- copyrights -->
 </footer>
 
-<script src="js/jquery.slides.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.slides.min.js?ver=1.0" type="text/javascript" charset="utf-8"></script>
+<script src='js/jquery.jfeed.pack.js?ver=1.0' async defer></script>
 <script src="js/index.js"></script>
 
 </body>

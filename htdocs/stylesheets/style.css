@@ -9,7 +9,7 @@ html, body, * {
 h1,h2,h3,h4 { color: #CCCCCC; }
 h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
-h3 { font-size: 1.5em; }
+h3 { font-size: 1.5em; margin-top: 0;}
 body, * {
     color: #666;
 }
@@ -17,6 +17,8 @@ body, * {
 /*----------------------------------
  * Common
  *---------------------------------*/
+
+blockquote { margin: 0; }
 
 body {
     color: #ddd;
@@ -34,15 +36,18 @@ body {
         display: none;
     }
 
-#wrapper {
+.wrapper {
     padding: 0 1em 0;
     margin: 0 auto;
     max-width: 980px;
-    text-shadow:0 1px 0 #000;
+    overflow: hidden;
+}
+
+#wrapper {
     background-image: url(../images/wrapper.png);
     background-repeat: no-repeat;
     background-position: center top;
-    overflow: hidden;
+    text-shadow:0 1px 0 #000;
 }
 
 .intro {
@@ -52,6 +57,10 @@ body {
 
 .cameo {
     border-radius: 100px;
+}
+
+.pad {
+    padding: 0 1em;
 }
 
 
@@ -115,20 +124,20 @@ body {
 /*----------------------
  * Carousel
  *----------------------*/
-#slides {
+.slides {
     display:none;
     }
 
-    #slides .slidesjs-navigation {
+    .slides .slidesjs-navigation {
       margin-top:3px;
     }
 
-    #slides .slidesjs-previous {
+    .slides .slidesjs-previous {
       margin-right: 5px;
       float: left;
     }
 
-    #slides .slidesjs-next {
+    .slides .slidesjs-next {
       margin-right: 5px;
       float: left;
     }
@@ -164,13 +173,13 @@ body {
       background-position: 0 -26px
     }
 
-    #slides a:link,
-    #slides a:visited {
+    .slides a:link,
+    .slides a:visited {
       color: #333
     }
 
-    #slides a:hover,
-    #slides a:active {
+    .slides a:hover,
+    .slides a:active {
       color: #9e2020
     }
 
@@ -178,19 +187,22 @@ body {
 /*-----------------------------------
  * Articles
  *-----------------------------------*/
-
-.articles article h2 {
-    text-decoration: none;
-    display: block;
-    background-image: url(../images/border.gif);
-    background-repeat: repeat-x;
-    background-position: left bottom;
-    color: #CCCCCC;
-    text-transform: uppercase;
-    font-size: 24px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.articles {
+    margin-top: 1em;
 }
+    .articles article h2 {
+        text-decoration: none;
+        display: block;
+        background-image: url(../images/border.gif);
+        background-repeat: repeat-x;
+        background-position: left bottom;
+        color: #CCCCCC;
+        text-transform: uppercase;
+        font-size: 24px;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
 
 /*--------------------------------------
@@ -224,12 +236,18 @@ body {
     color: #189ACB;
 }
 
+.desc {
+    display: none;
+    padding-top: 0.83em;
+}
+
 
 
 /*---------------------------------
  * About me
  *---------------------------------*/
 .about-me {
+    display: block;
     max-width: 150px;
     margin: auto;
 }
@@ -267,19 +285,103 @@ body {
         }
 
 
+/*---------------------------------
+ * Projects
+ *--------------------------------*/
+.projects {
+    overflow: hidden;
+    position: relative;
+}
+    .projects ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+        .projects ul li {
+            padding: 0.5em;
+        }
+
+
+/*---------------------------------
+ * Footer
+ *--------------------------------*/
+
+footer#footer {
+    text-shadow:1px 1px 0 #000;
+    background-color: #201f1e;
+    margin-top: 25px;
+    padding-top: 30px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    padding-left: 0px;
+}
+
+    #footer * {
+        color: #999;
+    }
+
+/*--------------------------------
+ * Testimonials
+ *-------------------------------*/
+.testimonials {
+}
+    .testimonials ul {
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+    .testimonials .slidesjs-container,
+    .testimonials .slidesjs-control {
+        height: 300px !important;
+        overflow: auto;
+    }
+.authors {
+    font-weight: bold;
+    color: #666666;
+    text-align: right;
+    display: block;
+}
+/*--------------------------------
+ * Twitter
+ *-------------------------------*/
+
+a.twitter-follow {
+    padding: 0px;
+    height: 50px;
+    width: 75px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: block;
+    text-indent: -9999px;
+    background-image: url(../images/twitter.png);
+    margin-top: -1px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    float: right;
+}
 
 /*---------------------------------
  * Responsive queries
  *--------------------------------*/
 
+@media (min-width: 35.5em) {
+    .about-me {
+        display: inline-block;
+        margin: 0;
+    }
+}
 
 @media (min-width: 64em) {
     #wrapper {
         padding: 0;
     }
+}
 
-    .about-me {
-        max-width: auto;
-        margin: 0;
+/* move follow icon because of erratic width of twitter widget when transitioning between mobile and small displays */
+@media screen and (min-width: 485px) and (max-width: 568px) {
+    a.twitter-follow {
+        float: none;
+        margin-left: 385px;
     }
 }
