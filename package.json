@@ -1,0 +1,24 @@
+{
+  "name": "davidemolin",
+  "version": "0.0.1",
+  "description": "Davide Molin's static homepage microsite",
+  "author": "Davide Alberto Molin <@davidemolin> (http://www.davidemolin.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dmolin/www.davidemolin.com"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "flightplan": "~0.3.1",
+    "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.4",
+    "grunt-contrib-sass": "*"
+  },
+  "engines": {
+    "node": ">=0.10.20"
+  },
+  "scripts": {
+    "deploy": "./node_modules/.bin/fly"
+  }
+}

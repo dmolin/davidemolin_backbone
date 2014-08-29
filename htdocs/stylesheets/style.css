@@ -1,0 +1,285 @@
+html, body, * {
+    box-sizing: border-box;
+}
+
+/*----------------------------------
+ * Typography
+ *---------------------------------*/
+
+h1,h2,h3,h4 { color: #CCCCCC; }
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+body, * {
+    color: #666;
+}
+
+/*----------------------------------
+ * Common
+ *---------------------------------*/
+
+body {
+    color: #ddd;
+    font-size: 16px;
+    height: 100%;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #111111;
+    background-image: url(../images/bg-body.jpg);
+    background-repeat: repeat;
+    background-position: left top;
+}
+    body.loading {
+        display: none;
+    }
+
+#wrapper {
+    padding: 0 1em 0;
+    margin: 0 auto;
+    max-width: 980px;
+    text-shadow:0 1px 0 #000;
+    background-image: url(../images/wrapper.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    overflow: hidden;
+}
+
+.intro {
+    height: 90px;
+    position: relative;
+}
+
+.cameo {
+    border-radius: 100px;
+}
+
+
+/*----------------------
+ * Logo
+ *---------------------*/
+#logo {
+    background: url('../images/dam-block-logo.png') left top no-repeat;
+    float: left;
+    min-width: 200px;
+    height: 65px;
+    margin-top: 25px;
+    padding-left: 130px;
+}
+    #logo p {
+        color: #ccc;
+    }
+
+    #logo h1 {
+        position: absolute;
+        text-indent: -9999px;
+        line-height: 0px;
+    }
+    #logo h2 {
+        display:none;
+    }
+    #logo a {
+        border-top-style: none;
+        border-right-style: none;
+        border-bottom-style: none;
+        border-left-style: none;
+        float: left;
+        padding-right: 15px;
+    }
+        #logo a h1 {
+            display: none;
+        }
+
+
+/*----------------------
+ * LinkedIn
+ *---------------------*/
+#linkedin {
+    position: absolute;
+    top: 0px;
+    right: -2px;
+}
+    #linkedin a {
+        background: url('../images/linkedin.png') left top no-repeat;
+        background-size: 100% 100%;
+        float: right;
+        font-size: 0;
+        height: 25px;
+        text-indent: 200%;
+        width: 160px;
+        margin-top: -4px;
+        margin-right: -4px;
+    }
+
+
+/*----------------------
+ * Carousel
+ *----------------------*/
+#slides {
+    display:none;
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top:3px;
+    }
+
+    #slides .slidesjs-previous {
+      margin-right: 5px;
+      float: left;
+    }
+
+    #slides .slidesjs-next {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-pagination {
+      margin: 6px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(../images/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+
+/*-----------------------------------
+ * Articles
+ *-----------------------------------*/
+
+.articles article h2 {
+    text-decoration: none;
+    display: block;
+    background-image: url(../images/border.gif);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    color: #CCCCCC;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/*--------------------------------------
+ * Toggles
+ *-------------------------------------*/
+.open-close {
+    position:relative;
+    background-image: url(../images/toggle-open.gif);
+    background-repeat: no-repeat;
+    background-position: right 17px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.open-close a {
+    text-decoration: none;
+    color: #CCCCCC;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.open-close a:hover {
+}
+
+.current{
+    background-attachment: scroll;
+    background-image: url(../images/toggle-close.gif);
+    background-repeat: no-repeat;
+    background-position: right 19px;
+    color: #189ACB;
+}
+
+
+
+/*---------------------------------
+ * About me
+ *---------------------------------*/
+.about-me {
+    max-width: 150px;
+    margin: auto;
+}
+
+.about-content {
+    padding: 0.5em 2em;
+}
+
+/*---------------------------------
+ * Yes/No
+ *---------------------------------*/
+.yesno {
+}
+    .yesno strong {
+        color: #ccc;
+        font-weight: normal;
+    }
+
+    .yesno h3 {
+        padding-left: 0.5em;
+    }
+
+    .yesno .yes,
+    .yesno .no {
+        padding: 0 1em 0 0.5em;
+    }
+
+    .yesno ul {
+        padding-left: 2em;
+    }
+        .yesno ul li {
+            line-height: 1.5em;
+            border-bottom: 1px dotted #333;
+            font-size: 1.1em;
+        }
+
+
+
+/*---------------------------------
+ * Responsive queries
+ *--------------------------------*/
+
+
+@media (min-width: 64em) {
+    #wrapper {
+        padding: 0;
+    }
+
+    .about-me {
+        max-width: auto;
+        margin: 0;
+    }
+}
