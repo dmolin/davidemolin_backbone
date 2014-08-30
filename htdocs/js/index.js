@@ -2,7 +2,7 @@ window.addEventListener("load", function() {
 
     //activate slides
     activateSlides(".slideshow .slides", {width: 960, height: 305});
-    activateSlides(".testimonials .slides", {width: 310, height: 305});
+    activateSlides(".testimonials .slides", {width: 300, height: 270 });
 
     //handle click on slides
     $('.slides .slide').click( function() {
@@ -21,6 +21,12 @@ window.addEventListener("load", function() {
         shift:2000,
         timeout: 8000
     });
+
+    $(window).resize(_.throttle(_.bind(loadFeeds, this, '#blog-posts', {
+        url:'http://developme.wordpress.com/feed/',
+        shift:2000,
+        timeout: 8000
+    }), 1000));
 
 
     function activateSlides(selector, options) {
