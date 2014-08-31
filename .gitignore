@@ -2,6 +2,7 @@
 .DS_Store
 node_modules
 lib
-htdocs.orig
-htdocs.clean
 flightplan.js
+.work
+dist
+templates.js

@@ -8,17 +8,36 @@
     "type": "git",
     "url": "git@github.com:dmolin/www.davidemolin.com"
   },
-  "dependencies": {},
+  "dependencies": {
+      "jquery-browserify": "*",
+      "backbone": "*",
+      "underscore": "*",
+      "backbone.base": "0.0.3"
+  },
   "devDependencies": {
     "flightplan": "~0.3.1",
+    "lodash": "*",
     "grunt-cli": "~0.1.13",
     "grunt": "~0.4.4",
-    "grunt-contrib-sass": "*"
+    "grunt-contrib-sass": "*",
+    "grunt-browserify": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-jasmine": "*",
+    "grunt-template": "*",
+    "glob":"*"
   },
   "engines": {
     "node": ">=0.10.20"
   },
   "scripts": {
+    "test" : "grunt test",
     "deploy": "./node_modules/.bin/fly"
   }
 }
