@@ -38,21 +38,9 @@ window.addEventListener("load", function() {
     }
 
     function setupCollapsibles() {
-        //$(".desc").hide();
         $(".open-close").click(function(){
-          if ($(this).is(".current"))
-          {
-           $(this).removeClass("current");
-           $(this).next(".desc").slideUp(400);
-          }
-          else
-          {
-           $(".desc").slideUp(400);
-           $(".open-close").removeClass("current");
-
-           $(this).addClass("current");
-           $(this).next(".desc").slideDown(400);
-          }
+            $(this).next().slideToggle(400);
+            if($(this).hasClass("current")) { $(this).removeClass("current"); } else { $(this).addClass("current"); }
          });
     }
 
@@ -74,9 +62,7 @@ window.addEventListener("load", function() {
             return;
         }
 
-        cont.empty();
         cont.html('<p>Wait, Feeds are loading...</p>');
-        //cont.html('<p>Be Patient<br/>I\'m working on a new version of the feeds...</p>');
         $.getFeed( {
             url: (options.type === 'json' ? '/jsonproxy' : '/proxy') + '.php?url=' + options.url,
 
@@ -106,13 +92,13 @@ window.addEventListener("load", function() {
                 cont.empty();
                 cont.append( toAppend );
                 $(".feed-list", cont ).cycle({
-                        fx:      'scrollUp',
-                            timeout: options.timeout || 10000,
-                            speed: 3000,
-                            pause: 1,
-                            cleartype: true,
-                            cleartypeNoBg: true,
-                            startingSlide: 0
+                    fx: 'scrollUp',
+                    timeout: options.timeout || 10000,
+                    speed: 3000,
+                    pause: 1,
+                    cleartype: true,
+                    cleartypeNoBg: true,
+                    startingSlide: 0
                 });
             }
         });

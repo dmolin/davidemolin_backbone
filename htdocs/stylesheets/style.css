@@ -421,7 +421,6 @@ footer#footer {
 /*--------------------------------
  * Twitter
  *-------------------------------*/
-
 a.twitter-follow {
     padding: 0px;
     height: 50px;
@@ -435,7 +434,7 @@ a.twitter-follow {
     margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
-    float: right;
+    /*float: right;*/
 }
 
 
@@ -475,6 +474,6 @@ a.twitter-follow {
 @media screen and (min-width: 485px) and (max-width: 568px) {
     a.twitter-follow {
         float: none;
-        margin-left: 385px;
+        /*margin-left: 385px;*/
     }
 }
