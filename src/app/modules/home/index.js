@@ -1,7 +1,8 @@
 var homeIndex = {
     views: require('./views'),
     deps: {
-        common: require('../common')
+        common: require('../common'),
+        carousel: require('../carousel')
     }
 };
 

@@ -2,13 +2,21 @@ var Backbone = global.Backbone,
     Base = require('backbone.base'),
     Module = require('../index'),
     ViewHelpers = Module.deps.common.helpers.ViewHelpers,
+    CarouselView = Module.deps.carousel.views.Carousel,
     tpl = require('./templates');
 
 var HomeView = Base.View.extend({
     template: tpl.views.Home,
 
     events: {
-        'click .slides .slide': 'onSlideSelection'
+        //'click .slides .slide': 'onSlideSelection'
+    },
+
+    renderSubviews: function() {
+        this.setSubview("slideshow", "[data-id=slideshow]", new CarouselView());
+        //this is necessary to calculate the slideshow dimensions (this can happen ONLY after
+        //the slideshow has been attached to the DOM)
+        this.getSubview("slideshow").layout();
     },
 
     afterRender: function() {
@@ -19,7 +27,7 @@ var HomeView = Base.View.extend({
         }
 
         //init slideshow
-        initSlideshow(this.$(".slideshow .slides"), {width: 960, height: 305});
+        //initSlideshow(this.$(".slideshow .slides"), {width: 960, height: 305});
         initSlideshow(this.$(".testimonials .slides"), {width: 300, height: 270 });
 
         //load blog posts
