@@ -51,7 +51,6 @@ body {
 }
 
 .intro {
-    height: 90px;
     position: relative;
 }
 
@@ -141,6 +140,104 @@ a:hover {
         #logo a h1 {
             display: none;
         }
+
+/*----------------------
+ * Social Icons
+ *---------------------*/
+ul.social
+{
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+    ul.social li
+    {
+        position: relative;
+        display: inline-block;
+        margin: 0.25em;
+        top: 0;
+    }
+        ul.social li a:hover,
+        ul.social li a:active,
+        ul.social li a:visited {
+            text-decoration: none;
+        }
+        ul.social li a {
+            display: block;
+            width: 48px;
+            height: 48px;
+            border-radius: 6px;
+            text-align: center;
+            top: 0;
+            position: relative;
+            text-decoration: none;
+
+            -moz-transition: top .2s ease-in-out;
+            -webkit-transition: top .2s ease-in-out;
+            -o-transition: top .2s ease-in-out;
+            -ms-transition: top .2s ease-in-out;
+            transition: top .2s ease-in-out;
+        }
+
+        ul.social li a:before {
+            background-color: #444;
+            background-image: url('images/bg.png'),     -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: url('images/bg.png'),     -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: url('images/bg.png'),     -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: url('images/bg.png'),     -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: url('images/bg.png'),     linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            border-radius: 6px;
+            box-shadow: inset 0px 0px 0px 1px #282828, inset 0px 2px 1px 0px rgba(255,255,255,0.1);
+            color: #2E2E2E !important;
+            display: block;
+            font-size: 26px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            outline: 0;
+            overflow: hidden;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.1);
+            width: 48px;
+
+            -moz-transition: background-color .2s ease-in-out;
+            -webkit-transition: background-color .2s ease-in-out;
+            -o-transition: background-color .2s ease-in-out;
+            -ms-transition: background-color .2s ease-in-out;
+            transition: background-color .2s ease-in-out;
+        }
+
+        ul.social.header {
+        }
+            ul.social.header li a:before {
+                background-color: transparent;
+            }
+
+            ul.social li a.fa-twitter       { background-color: #2DAAE4; }
+            ul.social li a.fa-facebook      { background-color: #3C5A98; }
+            ul.social li a.fa-dribbble      { background-color: #C4376B; }
+            ul.social li a.fa-linkedin      { background-color: #006599; }
+            ul.social li a.fa-tumblr        { background-color: #51718A; }
+            ul.social li a.fa-google-plus   { background-color: #DA2713; }
+            ul.social li a.fa-github        { background-color: #FAFAFA; }
+            ul.social li a.fa-rss           { background-color: #F2600B; }
+            ul.social li a.fa-instagram     { background-color: #E0D7C8; }
+            ul.social li a.fa-foursquare    { background-color: #39A3D4; }
+            ul.social li a.fa-skype         { background-color: #10BEF1; }
+            ul.social li a.fa-soundcloud    { background-color: #FE5419; }
+            ul.social li a.fa-youtube       { background-color: #BF2E25; }
+            ul.social li a.fa-blogger       { background-color: #FF6501; }
+            ul.social li a.fa-flickr        { background-color: #0062DB; }
+            ul.social li a.fa-vimeo         { background-color: #4C8AB0; }
+
+            ul.social li a:hover
+            {
+                top: -5px;
+            }
+                ul.social li a:hover:before
+                {
+                    background-color: transparent;
+                }
 
 
 /*----------------------
@@ -321,7 +418,8 @@ a:hover {
     }
 
     .yesno ul {
-        padding-left: 2em;
+        list-style: none;
+        padding-left: 1em;
     }
         .yesno ul li {
             line-height: 1.5em;
@@ -348,16 +446,18 @@ a:hover {
 
 .project {
     position: relative;
-    /*display: inline-block;*/
     max-width: 310px;  /* max dimension for each project box */
     margin: 0 auto;
 }
+    .project img {
+        border-radius: 0.4em;
+    }
 
 .project-info {
     border-radius: 0.3em;
     background: #fff;
-    /*box-shadow: 2px 2px 5px #333;*/
     border: 1px solid #aaa;
+    display: none;
     padding: 1em;
     position: absolute;
     top: 0.5em;
@@ -452,6 +552,18 @@ a.twitter-follow {
     color: #AAAAAA;
 }
 
+/***************************************************
+                 COPYRIGHT
+***************************************************/
+#copyright {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+#copyright p {
+    text-align: center;
+    color: #666666;
+}
+
 
 /*---------------------------------
  * Responsive queries
@@ -461,6 +573,15 @@ a.twitter-follow {
     .about-me {
         display: inline-block;
         margin: 0;
+    }
+}
+
+@media (min-width: 48em) {
+    ul.social
+    {
+        float: right;
+        margin-top: 1.8em;
+        text-align: left;
     }
 }
 

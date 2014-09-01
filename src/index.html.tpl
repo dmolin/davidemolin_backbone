@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/general_enclosed_foundicons.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
 
 </head>
 
