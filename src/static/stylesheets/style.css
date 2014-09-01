@@ -147,7 +147,7 @@ a:hover {
 ul.social
 {
     cursor: default;
-    margin: 0;
+    margin: -0.3em 0 0.5em;
     padding: 0;
     text-align: center;
 }
@@ -165,8 +165,8 @@ ul.social
         }
         ul.social li a {
             display: block;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             border-radius: 6px;
             text-align: center;
             top: 0;
@@ -192,19 +192,20 @@ ul.social
             color: #2E2E2E !important;
             display: block;
             font-size: 26px;
-            height: 48px;
-            line-height: 48px;
+            height: 36px;
+            line-height: 36px;
             text-align: center;
             outline: 0;
             overflow: hidden;
             text-shadow: 1px 1px 0px rgba(255,255,255,0.1);
-            width: 48px;
+            width: 36px;
 
             -moz-transition: background-color .2s ease-in-out;
             -webkit-transition: background-color .2s ease-in-out;
             -o-transition: background-color .2s ease-in-out;
             -ms-transition: background-color .2s ease-in-out;
             transition: background-color .2s ease-in-out;
+
         }
 
         ul.social.header {
@@ -232,7 +233,7 @@ ul.social
 
             ul.social li a:hover
             {
-                top: -5px;
+                /*top: -5px;*/
             }
                 ul.social li a:hover:before
                 {
@@ -580,7 +581,7 @@ a.twitter-follow {
     ul.social
     {
         float: right;
-        margin-top: 1.8em;
+        margin: 2.5em 0 0;
         text-align: left;
     }
 }
