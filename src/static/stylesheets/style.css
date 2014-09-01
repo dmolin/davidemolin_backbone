@@ -265,6 +265,11 @@ ul.social
 /*----------------------
  * Carousel
  *----------------------*/
+.slideshow {
+    border: 1px solid #333;
+    padding: 0.5em;
+}
+
 .slides {
     display:none;
     }
