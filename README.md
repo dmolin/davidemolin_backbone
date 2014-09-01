@@ -190,6 +190,10 @@ var PolicyView = Backbone.View.extend({
 });
 ```
 
+The new problem I was facing now was that in order for the new multi-module system to work, I needed to have a <i>template.js</i> file generated for each single module....
+
+![Screenshot](https://raw.github.com/dmolin/www.davidemolin.com/master/README/onedoesnot.jpg)
+
 
 #### Figuring out how to make it work with multiple Backbone modules ####
 
