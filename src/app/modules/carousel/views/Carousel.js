@@ -7,7 +7,7 @@ var CarouselView = Base.View.extend({
     className: "slides",
 
     events: {
-        'click .slides .slide': 'onSlideSelection'
+        'click .slide': 'onSlideSelection'
     },
 
     layout: function() {

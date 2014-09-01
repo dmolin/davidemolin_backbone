@@ -31,6 +31,8 @@ body {
     background-image: url(../images/bg-body.jpg);
     background-repeat: repeat;
     background-position: left top;
+
+    min-width: 320px;
 }
     body.loading {
         display: none;
@@ -294,6 +296,7 @@ ul.social
       margin: 0.8em 0 0;
       float: right;
       list-style: none;
+      padding: 0;
     }
 
     .slidesjs-pagination li {
@@ -329,6 +332,22 @@ ul.social
     .slides a:hover,
     .slides a:active {
       /*color: #9e2020*/
+    }
+
+.slides .slide[data-href] {
+    cursor: pointer;
+}
+
+.slides .slide figcaption {
+    background: #000;
+    bottom: 0;
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+}
+    .slides .slide figcaption p {
+        color: #fff;
+        opacity: 1;
     }
 
 

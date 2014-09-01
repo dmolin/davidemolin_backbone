@@ -9,7 +9,6 @@ var HomeView = Base.View.extend({
     template: tpl.views.Home,
 
     events: {
-        //'click .slides .slide': 'onSlideSelection'
     },
 
     renderSubviews: function() {
@@ -27,7 +26,6 @@ var HomeView = Base.View.extend({
         }
 
         //init slideshow
-        //initSlideshow(this.$(".slideshow .slides"), {width: 960, height: 305});
         initSlideshow(this.$(".testimonials .slides"), {width: 300, height: 270 });
 
         //load blog posts
