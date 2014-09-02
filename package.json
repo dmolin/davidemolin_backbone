@@ -37,7 +37,6 @@
     "node": ">=0.10.20"
   },
   "scripts": {
-    "test" : "grunt test",
-    "deploy": "./node_modules/.bin/fly"
+    "test" : "grunt test"
   }
 }

@@ -3,6 +3,7 @@ var Backbone = global.Backbone,
     Module = require('../index'),
     ViewHelpers = Module.deps.common.helpers.ViewHelpers,
     CarouselView = Module.deps.carousel.views.Carousel,
+    projects = Module.deps.projects,
     tpl = require('./templates');
 
 var HomeView = Base.View.extend({
@@ -12,7 +13,15 @@ var HomeView = Base.View.extend({
     },
 
     renderSubviews: function() {
+        var projectsColl = new projects.models.Projects();
         this.setSubview("slideshow", "[data-id=slideshow]", new CarouselView());
+        this.setSubview("projects", "[data-id=projects]", new projects.views.Projects({collection:projectsColl}));
+
+        this.listenTo(projectsColl, "reset change", function() {
+            console.log("something has changed in the collection");
+        });
+        projectsColl.fetch({reset:true});
+
         //this is necessary to calculate the slideshow dimensions (this can happen ONLY after
         //the slideshow has been attached to the DOM)
         this.getSubview("slideshow").layout();
@@ -38,7 +47,7 @@ var HomeView = Base.View.extend({
 
         //blog post block needs re-rendering when resizing event occurs
         callFunctionWhenSizeChanges(
-            function() { return this.$('#blog-posts').width() },
+            function() { return this.$('#blog-posts').width(); },
             _.bind(ViewHelpers.loadFeeds, ViewHelpers, this.$('#blog-posts'), feedsData) );
 
         //setup collapsible sections

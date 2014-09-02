@@ -31,9 +31,9 @@ module.exports = function (grunt) {
     //console.log(config);
 
     // Register alias tasks
-    grunt.registerTask("stage1", ["clean", "init", "jshint", "copy:assets", "buildtemplates", "browserify"]);
-    grunt.registerTask( "dev",  ["stage1", "copy:libs", "concat:dev", "template:dev"] );
-    grunt.registerTask( "prod", ["stage1", "uglify", "concat:prod", "template:prod"] );
+    grunt.registerTask("stage1", ["clean:pre", "init", "jshint", "copy:assets", "buildtemplates", "browserify"]);
+    grunt.registerTask( "dev",  ["stage1", "copy:libs", "concat:dev", "template:dev", "clean:post"] );
+    grunt.registerTask( "prod", ["stage1", "uglify", "concat:prod", "template:prod", "clean:post"] );
 
     // Default task.
     grunt.registerTask("default", ["prod"]);

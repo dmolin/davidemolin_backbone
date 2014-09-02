@@ -1,3 +1,8 @@
 module.exports = function clean(grunt) {
-    return { clean: ['<%= workdir %>','<%= distdir %>'] };
+    return {
+      clean: {
+        pre: ['<%= workdir %>','<%= distdir %>'],
+        post: ['<%= workdir %>']
+      }
+    };
 };

@@ -56,7 +56,7 @@ source/
         ....
 </pre>
 
-Each module is "self-contained": it contains the whole range of models/collections/views/routers necessary for it to carries out its work:
+Each module is "self-contained": it contains the whole range of models/collections/views/routers necessary for it to carry out its work:
 
 <pre>
 source/
@@ -77,7 +77,7 @@ I immediately loved the idea of using this elegant structure but first I had to 
 
 Although the idea of independent self-contained modules is pretty alluring, we leave in a social world and no individual "is an island"; that means that in order to have our application doing something useful, we need to make our modules communicate between each others or <i>mingle</i> in some way...
 
-The obvious case here is the <i>common</i> module, that contains by definition a set of functionalities (<i>utils/ViewHelpers</i> to name one) that are useful to all the other modules. One option could've been to simply require the specific file where necessary but this was not an acceptable solution, because it would've forced each module to specify the entire path to the required resource "every" single time:
+The obvious case here is the <i>common</i> module, that contains by definition a set of functionalities (<i>helpers/ViewHelpers</i> to name one) that are useful to all the other modules. One option could've been to simply require the specific file where necessary but this was not an acceptable solution, because it would've forced each module to specify the entire path to the required resource "every" single time:
 
 
 ```javascript
@@ -108,7 +108,8 @@ var homeIndex = {
     views: require('./views'),
     deps: {
         common: require('../common'),
-        carousel: require('../carousel')
+        carousel: require('../carousel'),
+        projects: require('../projects')
     }
 };
 
@@ -128,6 +129,7 @@ var Backbone = global.Backbone,
     Module = require('../index'),
     ViewHelpers = Module.deps.common.helpers.ViewHelpers,
     CarouselView = Module.deps.carousel.views.Carousel,
+    ProjectsView = Module.deps.projects.views.Projects,
     tpl = require('./templates');
 
 var HomeView = Base.View.extend({
@@ -211,5 +213,3 @@ modules/
         views/
             templates.js
 ```
-
-

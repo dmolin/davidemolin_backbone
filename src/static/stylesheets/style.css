@@ -11,7 +11,7 @@ h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.5em; margin-top: 0;}
 body, * {
-    color: #666;
+    color: #999;
 }
 
 /*----------------------------------
@@ -184,11 +184,11 @@ ul.social
 
         ul.social li a:before {
             background-color: #444;
-            background-image: url('images/bg.png'),     -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
-            background-image: url('images/bg.png'),     -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
-            background-image: url('images/bg.png'),     -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
-            background-image: url('images/bg.png'),     -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
-            background-image: url('images/bg.png'),     linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
+            background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2));
             border-radius: 6px;
             box-shadow: inset 0px 0px 0px 1px #282828, inset 0px 2px 1px 0px rgba(255,255,255,0.1);
             color: #2E2E2E !important;
@@ -466,7 +466,7 @@ ul.social
         margin: 0;
     }
         .projects ul li {
-            padding: 0.5em;
+            padding: 2em;
         }
 
 .project {
