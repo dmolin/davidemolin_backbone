@@ -12,7 +12,8 @@ var CarouselView = Base.View.extend({
 
     layout: function() {
         //init slideshow
-        initSlideshow(this.$el, {width: 960, height: 305});
+        //initSlideshow(this.$el, {width: 960, height: 305});
+        initSlideshow(this.$el, {width: 960, height: 610});
     },
 
     /*-----------------------------------
