@@ -17,9 +17,6 @@ var HomeView = Base.View.extend({
         this.setSubview("slideshow", "[data-id=slideshow]", new CarouselView());
         this.setSubview("projects", "[data-id=projects]", new projects.views.Projects({collection:projectsColl}));
 
-        this.listenTo(projectsColl, "reset change", function() {
-            console.log("something has changed in the collection");
-        });
         projectsColl.fetch({reset:true});
 
         //this is necessary to calculate the slideshow dimensions (this can happen ONLY after
