@@ -71,7 +71,17 @@ var ViewHelpers = {
                 }
             });
         }
-    }
+    },
+
+    initSlideshow: function($context, options) {
+        if(!$context) return;
+        
+        $context.slidesjs(_.extend({
+            width: 960,
+            height: 305,
+            navigation: false
+        }, options));
+    }    
 };
 
 module.exports = ViewHelpers;

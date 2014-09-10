@@ -3,6 +3,7 @@ var Backbone = global.Backbone,
     Module = require('../index'),
     ViewHelpers = Module.deps.common.helpers.ViewHelpers,
     CarouselView = Module.deps.carousel.views.Carousel,
+    recommendations = Module.deps.recommendations,
     projects = Module.deps.projects,
     tpl = require('./templates');
 
@@ -13,15 +14,19 @@ var HomeView = Base.View.extend({
     },
 
     renderSubviews: function() {
-        var projectsColl = new projects.models.Projects();
+        var projectsColl = new projects.models.Projects(),
+            recommendationsColl = new recommendations.models.Recommendations();
+
         this.setSubview("slideshow", "[data-id=slideshow]", new CarouselView());
         this.setSubview("projects", "[data-id=projects]", new projects.views.Projects({collection:projectsColl}));
+        this.setSubview("recommendations", "[data-id=recommendations]", new recommendations.views.Recommendations({collection:recommendationsColl}));
 
-        projectsColl.fetch({reset:true});
+        projectsColl.fetch({reset:true}); 
+        recommendationsColl.fetch({reset:true});
 
         //this is necessary to calculate the slideshow dimensions (this can happen ONLY after
         //the slideshow has been attached to the DOM)
-        this.getSubview("slideshow").layout();
+        //this.getSubview("slideshow").layout();        
     },
 
     afterRender: function() {
@@ -30,9 +35,6 @@ var HomeView = Base.View.extend({
         if(Cufon) {
             Cufon.replace('.open-close,h2,h3',{ hover: 'true' });
         }
-
-        //init slideshow
-        initSlideshow(this.$(".testimonials .slides"), {width: 300, height: 270 });
 
         //load blog posts
         feedsData = {

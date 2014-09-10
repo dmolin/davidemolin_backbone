@@ -10,10 +10,16 @@ var CarouselView = Base.View.extend({
         'click .slide': 'onSlideSelection'
     },
 
-    layout: function() {
+    constructor: function() {
+        Base.View.prototype.constructor.apply(this, arguments);
+        this._module = require("../");
+    },
+
+    afterAttach: function() {
         //init slideshow
-        //initSlideshow(this.$el, {width: 960, height: 305});
         initSlideshow(this.$el, {width: 960, height: 610});
+
+        console.log("module = ", this._module);
     },
 
     /*-----------------------------------

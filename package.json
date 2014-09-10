@@ -12,7 +12,7 @@
       "jquery-browserify": "*",
       "backbone": "*",
       "underscore": "*",
-      "backbone.base": "0.0.5"
+      "backbone.base": "latest"
   },
   "devDependencies": {
     "flightplan": "~0.3.1",

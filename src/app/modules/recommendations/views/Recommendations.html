@@ -1,0 +1,24 @@
+<% if(collection.length === 0) { %>
+    <div><span class="loading">Loading...</span></div>
+<% } else { %>
+        <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="foundicon-enclosed-left-arrow icon-large"></i></a>
+        <a href="#" class="slidesjs-next slidesjs-navigation"><i class="foundicon-enclosed-right-arrow icon-large"></i></a>
+
+        <% _.each(collection, function(rec) { %>
+            <div class="slide">
+                <p><time datetime="<%= rec.datetimeRaw %>"><%= rec.when %></time></p>
+                <blockquote>
+                    <p class='endorsement'>
+                        <% if(rec.title) { %> <span class='title'><%= rec.title %></span> <% } %>
+                        <%= rec.text %>
+                    </p>
+                </blockquote>
+                <cite>
+                    <a title="View <%= rec.author %> Profile" href="<%= rec.authorUrl %>"><%= rec.author %></a>,
+                    <em><%= rec.role %></em>
+                    <br />
+                    <i><%= rec.relationship %></i>
+                </cite>
+            </div>
+        <% }); %>
+<% } %>
