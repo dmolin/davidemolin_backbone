@@ -1,5 +1,6 @@
 var Backbone = global.Backbone,
     Base = require('backbone.base'),
+    deps = require('../deps'),
     tpl = require('./templates');
 
 var CarouselView = Base.View.extend({
@@ -10,14 +11,9 @@ var CarouselView = Base.View.extend({
         'click .slide': 'onSlideSelection'
     },
 
-    constructor: function() {
-        Base.View.prototype.constructor.apply(this, arguments);
-        this._module = require("../");
-    },
-
     afterAttach: function() {
         //init slideshow
-        initSlideshow(this.$el, {width: 960, height: 610});
+        deps.common.helpers.ViewHelpers.initSlideshow(this.$el, {width: 960, height: 610});
 
         console.log("module = ", this._module);
     },
@@ -34,12 +30,5 @@ var CarouselView = Base.View.extend({
     }
 });
 
-function initSlideshow($context, options) {
-    $context.slidesjs(_.extend({
-        width: 960,
-        height: 305,
-        navigation: false
-    }, options));
-}
 
 module.exports = CarouselView;

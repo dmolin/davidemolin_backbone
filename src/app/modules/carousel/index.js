@@ -1,9 +1,6 @@
 var CarouselModule = {
     views: require('./views'),
-
-    deps: {
-        common: require('../common')
-    }
+    deps: require('./deps')
 };
 
 module.exports = CarouselModule;

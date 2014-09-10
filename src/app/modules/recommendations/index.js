@@ -1,10 +1,7 @@
 var RecommendationsModule = {
     models: require('./models'),
     views:  require('./views'),
-
-    deps: {
-        common: require('../common')
-    }
+    deps: require('./deps')
 };
 
 module.exports = RecommendationsModule;
