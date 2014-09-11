@@ -1,10 +1,10 @@
 var Backbone = global.Backbone,
     Base = require('backbone.base'),
-    Module = require('../index'),
-    ViewHelpers = Module.deps.common.helpers.ViewHelpers,
-    CarouselView = Module.deps.carousel.views.Carousel,
-    recommendations = Module.deps.recommendations,
-    projects = Module.deps.projects,
+    deps = require('../deps'),
+    ViewHelpers = deps.common.helpers.ViewHelpers,
+    CarouselView = deps.carousel.views.Carousel,
+    recommendations = deps.recommendations,
+    projects = deps.projects,
     tpl = require('./templates');
 
 var HomeView = Base.View.extend({

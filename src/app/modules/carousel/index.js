@@ -1,6 +1,5 @@
 var CarouselModule = {
-    views: require('./views'),
-    deps: require('./deps')
+    views: require('./views')
 };
 
 module.exports = CarouselModule;

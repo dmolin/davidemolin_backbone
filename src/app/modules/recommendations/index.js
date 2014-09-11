@@ -1,7 +1,6 @@
 var RecommendationsModule = {
     models: require('./models'),
-    views:  require('./views'),
-    deps: require('./deps')
+    views:  require('./views')
 };
 
 module.exports = RecommendationsModule;

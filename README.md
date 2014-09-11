@@ -321,14 +321,8 @@ There's a clever way to solve this circular dependency issue; The same way we we
 <strong>The middleman</strong>
 
 this is the basic idea:
-
-```
-Module --> view
-Module --> deps
-view --> deps
-```
-
-I moved the dependencies <strong>out</strong> of the module index and into a <strong>deps.js</strong> file:
+Move the dependencies OUT of the module index, into a specific <strong>deps.js</strong> file, and requires it where it's needed.
+No more reasons to expose this bit of information in the module index anymore, btw, so we're even saving in digital footprints.
 
 ```javascript
 //file: module deps.js
@@ -344,8 +338,7 @@ Then I loaded this dependency from both the Module index and the view;
 
 var RecommendationsModule = {
     models: require('./models'),
-    views:  require('./views'),
-    deps: require('./deps')
+    views:  require('./views')
 };
 
 module.exports = RecommendationsModule;
@@ -365,4 +358,4 @@ var RecommendationsView = Base.View.extend({
 
 It works. circularity averted and everything now resolves correctly.
 Not only that. Now I can easily generate all my index.js files automatically via <strong>Grunt</strong> task,
-since the only variable information there is stored in a separate file (<i>deps.js</i>)
+since the only variable information there (the module dependencies) is now stored in a separate file (<i>deps.js</i>)
