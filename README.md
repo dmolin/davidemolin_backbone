@@ -1,9 +1,9 @@
 My Personal Homepage as a SPA (Single Page Application)
 ========================================================
 
-Albeith at the moment this is a simple page, I opted for implementing it as a full featured Single Page App. with Backbone, to make room for growing it into a more complex application.
+Albeit at the moment this is a simple page, I opted for implementing it as a full featured Single Page App. with Backbone, to make room for growing it into a more complex application.
 
-I also took it as a chance to tackle a new challenge in finding a better way to structure a Backbone application in order to make it easier to scale.
+I also took it as a chance to tackle a new challenge in finding a better way to structure a Backbone application, in order to make it easier to scale.
 
 The page offers a responsive experience (along with touch interactions for the carousels):
 
@@ -16,9 +16,9 @@ The page offers a responsive experience (along with touch interactions for the c
 - Common/JS with browserify and node modules
 - Node.js + Grunt and a bunch of plugins for the build process
 
-### Why I'm not adhering to the common MVC folder hierarchy ###
+### Why I'm not adhering to the common MVC folder hierarchy bandwagon ###
 
-I intentionally deviated from the mainstream approach to developing Backbone Applications using the classic MVC folder-based structure.
+I intentionally deviated from the mainstream approach in developing Backbone Applications using the classic MVC folder-based structure.
 In the 'classic' approach, the application is organised around a fixed folder hierarchy:
 
 <pre>
@@ -33,7 +33,7 @@ This approach works well but it soon shows its shortcomings as your application 
 There are known drawbacks in using this approach:
 
 - It doesn't scale well
-- a single unit of work (a "component") is sistematically scattered amongs 4 different folders (model+collection+view+router)
+- a single unit of work (a "component") is sistematically scattered amongs 3 or 4 different folders (model+collection+view[+router])
 - as your codebase grows it makes more difficult to locate components, making you 'jump' continually between folders
 - it's difficult to 'plug in' or 'plug out' a piece of functionality without affecting the whole folder hierarchy (just adding a new component means you have to touch all the folders to host its model/view/collection/router... )
 
@@ -213,3 +213,156 @@ modules/
         views/
             templates.js
 ```
+
+### Update: Solving circular dependencies ###
+
+When rolling my code with this approach I soon stumbled upon an unforeseen issue: a circular dependency.
+
+The problem arose when refactoring the recommendation list (originally hardcoded in the markup) into a discreete module, under <strong>/modules/recommendations</strong>
+
+I started creating the usual module index:
+
+```javascript
+var RecommendationsModule = {
+    models: require('./models'),
+    views:  require('./views'),
+    deps: {
+        common: require('../common')
+    }
+};
+
+module.exports = RecommendationsModule;
+```
+
+All good.
+Then I jumped into the Recommendations view, basically a view managing a collection of recommendations:
+
+```javascript
+var _ = global._,
+    Backbone = global.Backbone,
+    Base = require('backbone.base'),
+    Module = require('../'),
+    tpl = require('./templates');
+
+var RecommendationsView = Base.View.extend({
+    tagName: "div",
+    className: "slides",
+    template: tpl.views.Recommendations,
+
+    afterRender: function() {
+        var ViewHelpers = Module.deps.common.helpers.ViewHelpers;
+
+        //initialize slideshow, using a common helper
+        if(this.$('.slide').length) {
+            ViewHelpers.initSlideshow( this.$el, {width: 300, height: 270 });
+        }
+    }
+});
+
+module.exports = RecommendationsView;
+```
+
+Pretty sure that everything was jolly good (no errors from the linter) I run <strong>grunt dev</strong> (the <strong>dev</strong> param is for avoiding minification) and the jumped in the browser.
+
+#### B-O-O-M ! ####
+
+No good. I get an error from the console that states that <strong>helpers</strong> cannot be found on an undefined object...
+mmh.. that means that <strong>Module.deps</strong>, in my <strong>afterRender</strong> function, seems to be unresolved...
+
+I get a feeling in my guts: I try to print out the entire <strong>Module</strong> object and what do I get ?
+
+```javascript
+{}
+```
+
+WOW. How's that possible ? The console is telling me that my module index.js does not resolve ?
+I try moving things around. I try changing the index.js into a simple literal that doesn't require anything and contains only a boolean:
+
+```javascript
+module.exports = {
+  resolved: true
+}
+```
+
+Then I load it from the Home module, just for checking that it resolves.
+
+And it does.
+
+Ok, so I know that the issue is happening <i>within</i> the module itself..
+
+Then I get it.
+
+What's happening is the following:
+
+```
+1) Module "home" requires module "recommendations"
+2) recommendations/index.js is loaded
+   2.1) the file gets processed and the require for the view is performed
+   2.2) the view file views/Recommendations.js "tries" to require the module index...
+   2.3) the module index is, currently, empty, since it's not yet fully processed
+```
+
+So that's the problem.
+When the view requires its own index file, the file is still in processing and thus the common empty structure is returned.
+Proof is, if I move the require <strong>within</strong> the view methods (<i>initialize</i> as an example) I get the correct module index.
+
+That's a bloody circular reference:
+
+```
+Module --> view --> Module
+```
+
+#### How I solved it and saved my day
+
+Thinking about it I realised that there was only one reason why I was requiring the entire Module index from within my view: <i>the list of the module dependencies.</i>
+
+There's a clever way to solve this circular dependency issue; The same way we were used to implement Many-to-Many relationships within a relational DBMS:
+
+<strong>The middleman</strong>
+
+this is the basic idea:
+
+```
+Module --> view
+Module --> deps
+view --> deps
+```
+
+I moved the dependencies <strong>out</strong> of the module index and into a <strong>deps.js</strong> file:
+
+```javascript
+//file: module deps.js
+
+module.exports = {
+  common: require('../common')
+};
+```
+Then I loaded this dependency from both the Module index and the view;
+
+```javascript
+//file: module index.js
+
+var RecommendationsModule = {
+    models: require('./models'),
+    views:  require('./views'),
+    deps: require('./deps')
+};
+
+module.exports = RecommendationsModule;
+```
+
+```javascript
+var _ = global._,
+    Backbone = global.Backbone,
+    Base = require('backbone.base'),
+    deps = require('../deps'),
+    tpl = require('./templates');
+
+var RecommendationsView = Base.View.extend({
+  ...
+});
+```
+
+It works. circularity averted and everything now resolves correctly.
+Not only that. Now I can easily generate all my index.js files automatically via <strong>Grunt</strong> task,
+since the only variable information there is stored in a separate file (<i>deps.js</i>)
