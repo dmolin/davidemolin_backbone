@@ -1,15 +1,15 @@
 [
     {
         "id":1,
-        "title": "X-Plane Avionics (FlightSimPanels)",
-        "imgUrl": "images/projects/avionics.jpg",
-        "url": "http://github.com/dmolin/flightSimPanels"
-    },
-    {
-        "id":2,
         "title": "My Personal Homepage",
         "imgUrl": "images/projects/homepage.jpg",
         "url": "http://github.com/dmolin/www.davidemolin.com"
+    },
+    {
+        "id":2,
+        "title": "X-Plane Avionics (FlightSimPanels)",
+        "imgUrl": "images/projects/avionics.jpg",
+        "url": "http://github.com/dmolin/flightSimPanels"
     },
     {
         "id":3,
