@@ -331,7 +331,7 @@ module.exports = {
   common: require('../common')
 };
 ```
-Then I loaded this dependency from both the Module index and the view;
+Then I loaded this dependency from the view. I can remove it from the module index, since it's of no use there:
 
 ```javascript
 //file: module index.js

@@ -21,12 +21,8 @@ var HomeView = Base.View.extend({
         this.setSubview("projects", "[data-id=projects]", new projects.views.Projects({collection:projectsColl}));
         this.setSubview("recommendations", "[data-id=recommendations]", new recommendations.views.Recommendations({collection:recommendationsColl}));
 
-        projectsColl.fetch({reset:true}); 
+        projectsColl.fetch({reset:true});
         recommendationsColl.fetch({reset:true});
-
-        //this is necessary to calculate the slideshow dimensions (this can happen ONLY after
-        //the slideshow has been attached to the DOM)
-        //this.getSubview("slideshow").layout();        
     },
 
     afterRender: function() {
