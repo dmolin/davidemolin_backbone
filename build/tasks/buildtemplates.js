@@ -1,5 +1,5 @@
 /*global module: true, require: true */
-var glob = require('glob');
+var glob = require('glob-all');
 
 
 module.exports = function (grunt) {
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 
         function processModule(data) {
             //var that = this;
-            var templates = glob.sync(data.src),
+            var templates = glob.sync([data.src]),
                 templatesObject = {};
 
             templates = templates.map(function (templateFile) {

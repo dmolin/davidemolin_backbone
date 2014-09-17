@@ -31,7 +31,7 @@
     "grunt-contrib-watch": "*",
     "grunt-contrib-jasmine": "*",
     "grunt-template": "*",
-    "glob":"*"
+    "glob-all":"*"
   },
   "engines": {
     "node": ">=0.10.20"
