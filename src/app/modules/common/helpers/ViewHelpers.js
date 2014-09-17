@@ -1,3 +1,5 @@
+var _ = global._;
+
 var ViewHelpers = {
 
     collapsible: function(view) {
@@ -30,9 +32,11 @@ var ViewHelpers = {
         actualLoad();
 
         function actualLoad() {
+            var type = options.type === "json" ? "application/json" : options.type || "application/xml";
+
             cont.html('<p>Wait, Feeds are loading...</p>');
             $.getFeed( {
-                url: (options.type === 'json' ? '/jsonproxy' : '/proxy') + '.php?url=' + options.url,
+                url: '/proxy.php?url=' + options.url + "&type=" + encodeURIComponent(type),
 
                 success: function(data) {
                     var toAppend = $(document.createElement( "div" )).addClass( "feed-list" ),
@@ -45,9 +49,7 @@ var ViewHelpers = {
                                 title: (options.fields && options.fields.title) || 'title',
                             };
 
-                    for( i = 0; i < feed.items.length; i++ )
-                    {
-                        node = feed.items[i];
+                    _.each(feed.items, function(node, i) {
                         $(toAppend).append(
                             "<div class='feed-item slide' data-slideshow-index='" + i + "'>" +
                             (options.showTitle ? "<span class='feed-title' ><a href='" + node[map.link] + "'>" + node[map.title] + "</a></span>" : "" ) +
@@ -56,8 +58,9 @@ var ViewHelpers = {
                             "</p>" +
                             "</div>\n"
                         );
-                    }
-                    cont.empty();
+                    });
+
+                    cont.html('');
                     cont.append( toAppend );
                     $(".feed-list", cont ).cycle({
                         fx: 'scrollUp',
@@ -75,13 +78,13 @@ var ViewHelpers = {
 
     initSlideshow: function($context, options) {
         if(!$context) return;
-        
+
         $context.slidesjs(_.extend({
             width: 960,
             height: 305,
             navigation: false
         }, options));
-    }    
+    }
 };
 
 module.exports = ViewHelpers;

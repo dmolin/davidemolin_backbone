@@ -1,5 +1,5 @@
 <?php
-header('Content-type: application/xml');
+header('Content-type:' . $_REQUEST["type"]||"application/xml");
 $handle = fopen($_REQUEST['url'], "r");
 
 if ($handle) {
