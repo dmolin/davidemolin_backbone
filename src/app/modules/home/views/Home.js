@@ -49,33 +49,8 @@ var HomeView = Base.View.extend({
         ViewHelpers.collapsible(this);
     },
 
-    /*-----------------------------------
-     * UI event handling
-     *----------------------------------*/
-    onSlideSelection: function(evt) {
-        if(evt) evt.preventDefault();
-        var url = evt ? $(evt.currentTarget).data('href') : null;
-        if(url) {
-            window.open(url, "_blank");
-        }
-    }
 });
 
-function initSlideshow($context, options) {
-    $context.slidesjs(_.extend({
-        width: 960,
-        height: 305,
-        navigation: false
-    }, options));
-}
-
-function loadBlogPosts() {
-    loadFeeds( '#blog-posts', {
-        url:'http://developme.wordpress.com/feed/',
-        shift:2000,
-        timeout: 8000
-    });
-}
 
 function callFunctionWhenSizeChanges(getSizeFn, fn) {
     var lastWidth = getSizeFn();
