@@ -14,8 +14,6 @@ var CarouselView = Base.View.extend({
     afterAttach: function() {
         //init slideshow
         deps.common.helpers.ViewHelpers.initSlideshow(this.$el, {width: 960, height: 610});
-
-        console.log("module = ", this._module);
     },
 
     /*-----------------------------------
