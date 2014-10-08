@@ -569,6 +569,10 @@ a.twitter-follow {
     /*float: right;*/
 }
 
+.twitter-timeline {
+    min-width: 100% !important;
+}
+
 
 /*----------------------------------
  * Feeds
