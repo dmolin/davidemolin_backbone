@@ -5,6 +5,7 @@ var Backbone = global.Backbone,
 var HomeRouter = Backbone.Router.extend({
     routes: {
         'private': 'private',
+        'lab': 'lab',
         '*path': 'home'
     },
 
@@ -33,6 +34,10 @@ var HomeRouter = Backbone.Router.extend({
             el: '#view'
         });
         view.render();
+    },
+
+    lab: function() {
+        //to the lab
     }
 });
 
