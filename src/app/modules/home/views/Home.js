@@ -28,10 +28,6 @@ var HomeView = Base.View.extend({
     afterRender: function() {
         var feedsData;
 
-        if(Cufon) {
-            Cufon.replace('.open-close,h2,h3',{ hover: 'true' });
-        }
-
         //load blog posts
         feedsData = {
             url:'http://developme.wordpress.com/feed/',

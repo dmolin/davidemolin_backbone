@@ -1,16 +1,6 @@
 <div class="project">
     <a target="_blank" href="<%= model.url %>">
-        <img class="pure-img" src="<%= model.imgUrl %>">
+        <span class="project-title"><%= model.title %></span>
+        <img class="pure-img" src="<%= model.imgUrl %>" alt="<%= model.title %>">
     </a>
-    <!--
-    <div class="project-info">
-        Info about this project!
-        <nav class="dialog-nav">
-            <button class="pure-button pure-button-primary">Dismiss</button>
-        </nav>
-    </div>
-    <nav class="dialog-nav">
-        <a class="pure-button pure-button-primary" target="_blank" href="<%= model.url %>">Info</a>
-    </nav>
-    -->
 </div>
