@@ -7,8 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="Davide Molin">
+    <meta name="application-name" content="Davide Alberto Molin - Contract Frontend Developer">
+    <meta name="description" content="Davide Alberto Molin - Contract Frontend Developer. My works, skills and personal projects">
 
-    <title> Davide Alberto Molin</title>
+    <title> Davide Alberto Molin - Contract Frontend Developer</title>
 
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
