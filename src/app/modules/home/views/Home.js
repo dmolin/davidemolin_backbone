@@ -43,7 +43,24 @@ var HomeView = Base.View.extend({
 
         //setup collapsible sections
         ViewHelpers.collapsible(this);
+
+        //if there's an active section, make it active!
+        if(this.options.active) {
+            this.makeActive(this.options.active);
+        }
     },
+
+    makeActive: function(section) {
+        var $section = this.$(section);
+        if($section.length) {
+            $(document.body).animate({
+                scrollTop: $section.offset().top
+            }, 500, function() {
+                $section.find('.open-close').click();
+            });
+
+        }
+    }
 
 });
 

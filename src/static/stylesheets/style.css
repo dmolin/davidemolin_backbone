@@ -25,11 +25,15 @@ h1,h2,h3,h4 {
 
 blockquote { margin: 0; }
 
+article p,
+footer p {
+    line-height: 1.3em;
+}
+
 body {
     color: #ddd;
     font-size: 16px;
     height: 100%;
-    font-size: 12px;
     margin: 0px;
     padding: 0px;
     background-color: #111111;
@@ -59,6 +63,8 @@ body {
 
 .intro {
     position: relative;
+    padding-top: 1em;
+    margin-bottom: 0.3em;
 }
 
 .cameo {
@@ -113,17 +119,33 @@ a:hover {
     margin-left: 15px;
 }
 
+.banner {
+    text-align: center;
+    padding: 0.5em 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 100;
+}
+    .banner * {
+        color: #ff7900;
+        font-weight: bold;
+    }
+
 /*----------------------
  * Logo
  *---------------------*/
 #logo {
-    background: url('../images/dam-block-logo.png') left top no-repeat;
-    float: left;
-    min-width: 200px;
-    height: 65px;
-    margin-top: 25px;
-    padding-left: 130px;
-}
+    __background: url('../images/dam-block-logo.png') left top no-repeat;
+    __background: url('../images/Codingshack-dam.png') left top no-repeat;
+    __background-size: auto 100%;
+    __float: left;
+    __min-width: 200px;
+    ____height: 60px;
+    __padding-left: 130px;
+    text-align: center;
+    }
+
     #logo p {
         color: #ccc;
     }
@@ -136,17 +158,32 @@ a:hover {
     #logo h2 {
         display:none;
     }
-    #logo a {
-        border-top-style: none;
-        border-right-style: none;
-        border-bottom-style: none;
-        border-left-style: none;
-        float: left;
-        padding-right: 15px;
+
+    #logo img {
+        width: 80%;
+        max-width: 400px;
     }
-        #logo a h1 {
-            display: none;
-        }
+
+    #logo a {
+        border-style: none;
+        __float: left;
+        __padding-right: 15px;
+    }
+
+.owner {
+    text-align: center;
+    line-height: 1.5em;
+    font-family: 'Pathway Gothic One',sans-serif;
+    font-size: 1.3em;
+    }
+    .owner p {
+        margin: 0;
+    }
+    .owner em {
+        font-style: normal;
+        font-weight: bold;
+        color: #eee;
+    }
 
 /*----------------------
  * Social Icons
@@ -154,9 +191,10 @@ a:hover {
 ul.social
 {
     cursor: default;
-    margin: -0.3em 0 0.5em;
+    __margin: -0.3em 0 0.5em;
     padding: 0;
     text-align: center;
+    margin: 2em 0 0;
 }
     ul.social li
     {
@@ -622,14 +660,22 @@ a.twitter-follow {
         display: inline-block;
         margin: 0;
     }
+
 }
 
 @media (min-width: 48em) {
+    #logo {
+        text-align: left;
+    }
+    .owner {
+        float: right;
+    }
+
     ul.social
     {
-        float: right;
-        margin: 2.5em 0 0;
-        text-align: left;
+        __float: right;
+        __margin: 2em 0 0;
+        __text-align: left;
     }
 }
 

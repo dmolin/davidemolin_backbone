@@ -13,6 +13,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-template');
 
     var config = {
@@ -31,7 +32,7 @@ module.exports = function (grunt) {
     //console.log(config);
 
     // Register alias tasks
-    grunt.registerTask("stage1", ["clean:pre", "init", "jshint", "copy:assets", "buildtemplates", "browserify"]);
+    grunt.registerTask("stage1", ["clean:pre", "init", "jshint", "copy:assets", "buildtemplates", "cssmin", "browserify"]);
     grunt.registerTask( "dev",  ["stage1", "copy:libs", "concat:dev", "template:dev", "clean:post"] );
     grunt.registerTask( "prod", ["stage1", "uglify", "concat:prod", "template:prod", "clean:post"] );
 

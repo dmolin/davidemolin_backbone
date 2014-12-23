@@ -6,6 +6,7 @@ var HomeRouter = Backbone.Router.extend({
     routes: {
         'private': 'private',
         'lab': 'lab',
+        'section/*section': 'section',
         '*path': 'home'
     },
 
@@ -38,6 +39,14 @@ var HomeRouter = Backbone.Router.extend({
 
     lab: function() {
         //to the lab
+    },
+
+    section: function(section) {
+        var view = new HomeView({
+            el: '#view',
+            active: '[data-id=' + section + ']'
+        });
+        view.render();
     }
 });
 

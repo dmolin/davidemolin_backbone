@@ -8,18 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="Davide Molin">
-    <meta name="application-name" content="Davide Alberto Molin - Contract Frontend Developer">
-    <meta name="description" content="Davide Alberto Molin - Contract Frontend Developer. My works, skills and personal projects">
+    <meta name="application-name" content="Davide Alberto Molin - Frontend Development">
+    <meta name="description" content="CodingShack - Davide Alberto Molin - Frontend Development. My works, skills and personal projects">
 
-    <title> Davide Alberto Molin - Contract Frontend Developer</title>
+    <meta name="keywords" content="Davide Alberto Molin, Codingshack, Codingshack Ltd., Front-End Development, Front-End">
+    <title> Davide Alberto Molin - Frontend Development</title>
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
 
     <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/general_enclosed_foundicons.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
 
 </head>
 

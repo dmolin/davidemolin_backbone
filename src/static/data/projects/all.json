@@ -1,5 +1,11 @@
 [
     {
+        "id":8,
+        "title": "My new FED Course on Udemy",
+        "imgUrl": "images/projects/fofed.jpg",
+        "url": "https://www.udemy.com/foundations-of-front-end-development/?couponCode=HVZ6Q8LZEF"
+    },
+    {
         "id":1,
         "title": "My Personal Homepage",
         "imgUrl": "images/projects/homepage.jpg",
