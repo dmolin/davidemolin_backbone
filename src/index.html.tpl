@@ -17,7 +17,6 @@
 
     <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
-
 </head>
 
 <body class="">

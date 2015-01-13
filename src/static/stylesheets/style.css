@@ -132,17 +132,23 @@ a:hover {
         font-weight: bold;
     }
 
+hr {
+    border: 1px inset #666;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+
 /*----------------------
  * Logo
  *---------------------*/
 #logo {
-    __background: url('../images/dam-block-logo.png') left top no-repeat;
-    __background: url('../images/Codingshack-dam.png') left top no-repeat;
-    __background-size: auto 100%;
-    __float: left;
-    __min-width: 200px;
-    ____height: 60px;
-    __padding-left: 130px;
     text-align: center;
     }
 
@@ -166,8 +172,6 @@ a:hover {
 
     #logo a {
         border-style: none;
-        __float: left;
-        __padding-right: 15px;
     }
 
 .owner {
@@ -191,7 +195,6 @@ a:hover {
 ul.social
 {
     cursor: default;
-    __margin: -0.3em 0 0.5em;
     padding: 0;
     text-align: center;
     margin: 2em 0 0;
@@ -464,6 +467,33 @@ ul.social
 
 .about-content {
     padding: 0.5em 2em;
+}
+
+
+/*---------------------------------
+ * About me - techs
+ *---------------------------------*/
+.taglist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.taglist-title {
+    display: block;
+    margin: 0.5em 0 1em;
+}
+
+.taglist-item {
+    float: left;
+    border: 1px solid #666;
+    background: #999;
+    border-radius: 4px;
+    padding: 0.1em 0.3em;
+    margin: 0.2em;
+    color: #ddd;
+    font-size: 0.9em;
+    text-shadow: 0 0px 1px #000;
 }
 
 /*---------------------------------
