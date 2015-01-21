@@ -7,7 +7,7 @@ I also took it as a chance to tackle a new challenge in finding a better way to 
 
 The page offers a responsive experience (along with touch interactions for the carousels):
 
-[![ScreenShot](https://raw.github.com/dmolin/www.davidemolin.com/master/README/davidemolin.jpg)](http://www.davidemolin.com)
+[![ScreenShot](https://raw.github.com/dmolin/www.davidemolin.com/master/README/davidemolin.jpg)](http://backbone.davidemolin.com)
 
 ### Technologies Used ###
 
