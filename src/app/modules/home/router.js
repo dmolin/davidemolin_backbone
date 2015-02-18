@@ -4,8 +4,6 @@ var Backbone = global.Backbone,
 
 var HomeRouter = Backbone.Router.extend({
     routes: {
-        'private': 'private',
-        'lab': 'lab',
         'section/*section': 'section',
         '*path': 'home'
     },
@@ -27,18 +25,6 @@ var HomeRouter = Backbone.Router.extend({
             el: '#view'
         });
         view.render();
-    },
-
-    private: function() {
-        console.log("we should be here ONLY if authenticated");
-        var view = new HomeView({
-            el: '#view'
-        });
-        view.render();
-    },
-
-    lab: function() {
-        //to the lab
     },
 
     section: function(section) {

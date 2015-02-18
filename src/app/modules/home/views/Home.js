@@ -15,14 +15,16 @@ var HomeView = Base.View.extend({
 
     renderSubviews: function() {
         var projectsColl = new projects.models.Projects(),
-            recommendationsColl = new recommendations.models.Recommendations();
+            recommendationsColl = new recommendations.models.Recommendations(),
+            slidesColl = new deps.carousel.models.Slides();
 
-        this.setSubview("slideshow", "[data-id=slideshow]", new CarouselView());
+        this.setSubview("slideshow", "[data-id=slideshow]", new CarouselView({collection: slidesColl}));
         this.setSubview("projects", "[data-id=projects]", new projects.views.Projects({collection:projectsColl}));
         this.setSubview("recommendations", "[data-id=recommendations]", new recommendations.views.Recommendations({collection:recommendationsColl}));
 
         projectsColl.fetch({reset:true});
         recommendationsColl.fetch({reset:true});
+        slidesColl.fetch({reset:true});
     },
 
     afterRender: function() {

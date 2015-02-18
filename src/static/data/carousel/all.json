@@ -1,0 +1,54 @@
+[
+    {
+        "url": "https://www.udemy.com/foundations-of-front-end-development",
+        "image": "carousel_fofed.jpg",
+        "caption": "My new course on Front End Development on Udemy. have a look!"
+    },
+    {
+        "url": "http://github.com/dmolin/flightSimPanels",
+        "image": "carousel_avionics.jpg",
+        "caption": "A personal project I'm working on. Click on the image to visit my Github page"
+    },
+    {
+        "url": "http://github.com/dmolin/www.davidemolin.com",
+        "image": "carousel_davidemolin.jpg",
+        "caption": "Personal webpage. Made with AngularJS (+ alternate vers. in Backbone). CSS with SASS"
+    },
+    {
+        "url": "http://github.com/dmolin/www.giadacoppi.com",
+        "image": "carousel_giadacoppi.jpg",
+        "caption": "I turned a static page into a responsive website with dynamic columns"
+    },
+    {
+        "url": "http://www.policyexpert.co.uk/car-insurance/",
+        "image": "carousel_policyexpert.jpg",
+        "caption": "with the dream team in QMetric we've been implementing a next generation car insurance platform"
+    },
+    {
+        "image": "carousel_ea.jpg",
+        "caption": "in EA I've been involved in the Origin mobile distribution platform"
+    },
+    {
+        "url": "http://www.moshlings.com",
+        "image": "carousel_moshlings.jpg",
+        "caption": "I implemented the entire responsive Frontend from design mockups. CSS with Compass/SASS"
+    },
+    {
+        "url": "http://www.mindcandy.com",
+        "image": "carousel_mindcandy.jpg",
+        "caption": "I've been extending/maintaining the front end code on the main MindCandy websites."
+    },
+    {
+        "url": "https://sports.bovada.lv/mobile/#home",
+        "image": "carousel_sportsbook.jpg",
+        "caption": "For Bovada.lv I was involved in multiple projects: the Mobile Application and the games portal logic"
+    },
+    {
+        "image": "carousel_slotscom.jpg",
+        "caption": "On the Drupal Slots.com app. I was in charge for the Front End implementation from original PSD Comps. CSS with SASS"
+    },
+    {
+        "image": "carousel_riplife.jpg",
+        "caption": "I developed a compact MVC framework for use in multiple company-wide projects"
+    }
+]

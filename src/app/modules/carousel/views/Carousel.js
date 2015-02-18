@@ -8,24 +8,17 @@ var CarouselView = Base.View.extend({
     className: "slides",
 
     events: {
-        'click .slide': 'onSlideSelection'
     },
 
-    afterAttach: function() {
-        //init slideshow
-        deps.common.helpers.ViewHelpers.initSlideshow(this.$el, {width: 960, height: 610});
+    afterRender: function() {
+        if(this.collection && this.collection.length) {
+            deps.common.helpers.ViewHelpers.initSlideshow(this.$el, {width: 960, height: 610});
+        }
     },
 
     /*-----------------------------------
      * UI event handling
      *----------------------------------*/
-    onSlideSelection: function(evt) {
-        if(evt) evt.preventDefault();
-        var url = evt ? $(evt.currentTarget).data('href') : null;
-        if(url) {
-            window.open(url, "_blank");
-        }
-    }
 });
 
 
